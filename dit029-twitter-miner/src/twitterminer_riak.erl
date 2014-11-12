@@ -64,6 +64,7 @@ twitter_save_pipeline(R, URL, Keys) ->
 
 % We save only objects that have ids.
 save_tweet(R, {parsed_tweet, _L, B, {id, I}}) ->
+io:format("I is ~p~n",[I]),
 {L}=jiffy:decode(B),
 %io:format("Decoded is ~p~n",[L]),
 Bd=decorate(L),
@@ -88,6 +89,7 @@ end.
 
 %%parses valuable data from the List. 
 decorate([_|T])-> 
+
 case lists:keysearch(<<"user">>,1,T)of
 {value,{_,{O}}}->
 case lists:keysearch(<<"lang">>,1,O)of
@@ -117,7 +119,7 @@ end.
 %%cleans up the parsed hashtag so we only get the hashtags and nothing extra
 hashFormat(U)->hashFormat(U,[]).
 hashFormat([],W)->W;
-hashFormat([H|T],W)->case H of
+hashFormat([H|_],W)->case H of
 {[{_,R},_]}->[R]++W
 end.
 
