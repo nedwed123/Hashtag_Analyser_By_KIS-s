@@ -26,7 +26,7 @@ twitter_example() ->
   Keys = twitterminer_source:get_account_keys(account1),
 
   RHP = get_riak_hostport(riak1),
-  {ok, R} = riakc_pb_socket:start(RHP#hostport.host, RHP#hostport.port),
+  {ok, R} = riakc_pb_socket:start("127.0.0.1", RHP#hostport.port),
 
   % Run our pipeline
   P = twitterminer_pipeline:build_link(twitter_save_pipeline(R, URL, Keys)),
@@ -80,13 +80,13 @@ save_tweet(_, _) -> ok.
 
 handleInput(Bin,N)->
 {ok,Pid}=riakc_pb_socket:start_link("127.0.0.1", 10027),
-X= riakc_pb_socket:get(Pid, <<"tweets">>,Bin),
+X= riakc_pb_socket:get(Pid, <<"tweets">>,list_to_binary(string:to_lower(binary_to_list(list_to_binary(Bin))))),
 case X  of
 {error,notfound}->		
-ObjNew = riakc_obj:new(<<"tweets">>, list_to_binary(Bin), N),
-io:format("New Key is ~tp~n",[Bin]),
-io:format("New Value is ~p~n",[N]);
-riakc_pb_socket:put(R, Obj, [{w, 0}]);
+ObjNew = riakc_obj:new(<<"tweets">>, list_to_binary(string:to_lower(binary_to_list(list_to_binary(Bin)))), N),
+io:format("New Key is ~tp~n",[string:to_lower(binary_to_list(list_to_binary(Bin)))]),
+io:format("New Value is ~p~n",[N]),
+riakc_pb_socket:put(Pid, ObjNew, [{w, 0}]);
 
 {ok,Fetched1}-> Z= binary_to_term(riakc_obj:get_value(Fetched1)),
 case lists:keysearch(<<"favorite_count">>,1,Z) of
@@ -99,16 +99,24 @@ case lists:keysearch(<<"retweet_count">>,1,N) of
 {value,{SS,Ss}}->
 case lists:keysearch(<<"lang">>,1,Z) of
 {value,{LL,Ls}}->
+
 Obj1=[{SS,Os+Ss},{UU,Qs+Us},{LL,Ls}],
 Object=riakc_obj:update_value(Fetched1,Obj1),
-riakc_pb_socket:put(Pid,Object,[return_body])
+riakc_pb_socket:put(Pid,Object,[return_body]),
 io:format("OLd key is now updated ~tp~n",[Bin]),
-io:format("OLd value is now updated ~p~n",[N])
-end
-end
-end
-end
-end
+io:format("OLd value is now updated ~p~n",[Z]),
+io:format("new object is ~p~n",[Obj1])
+end;
+_->ok
+end;
+_->ok
+end;
+_->ok
+end;
+_->ok
+end;
+_->ok
+
 end.
 
 %checks if a list is empty or not
