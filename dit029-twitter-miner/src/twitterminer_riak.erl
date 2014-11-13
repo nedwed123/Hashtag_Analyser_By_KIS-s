@@ -64,22 +64,52 @@ twitter_save_pipeline(R, URL, Keys) ->
 
 % We save only objects that have ids.
 save_tweet(R, {parsed_tweet, _L, B, {id, I}}) ->
-io:format("I is ~p~n",[I]),
+%io:format("I is ~p~n",[I]),
 {L}=jiffy:decode(B),
 %io:format("Decoded is ~p~n",[L]),
 Bd=decorate(L),
 Id=fetch_key(L),
 
-case check(Id) of 
-true->
-Obj = riakc_obj:new(<<"tweets">>, list_to_binary(Id), Bd),
- io:format("Key is ~p~n",[Id]),
- io:format("Value is ~p~n",[Bd]),
-riakc_pb_socket:put(R, Obj, [{w, 0}]);
-_->ok
-end;
+case check(Id)of
+true-> 
+handleInput(Id, Bd);
+_->ok	end;
 save_tweet(_, _) -> ok.
 
+%Checks whether a tag has already been put to riak as key or not. if it has not been it will put the  object as new, otherwise fetches the old key and adds the retweets and favorite counts to it. 
+
+handleInput(Bin,N)->
+{ok,Pid}=riakc_pb_socket:start_link("127.0.0.1", 10027),
+X= riakc_pb_socket:get(Pid, <<"tweets">>,Bin),
+case X  of
+{error,notfound}->		
+ObjNew = riakc_obj:new(<<"tweets">>, list_to_binary(Bin), N),
+io:format("New Key is ~tp~n",[Bin]),
+io:format("New Value is ~p~n",[N]);
+riakc_pb_socket:put(R, Obj, [{w, 0}]);
+
+{ok,Fetched1}-> Z= binary_to_term(riakc_obj:get_value(Fetched1)),
+case lists:keysearch(<<"favorite_count">>,1,Z) of
+{value,{_,Qs}}->
+case lists:keysearch(<<"retweet_count">>,1,Z) of
+{value,{_,Os}}->
+case lists:keysearch(<<"favorite_count">>,1,N) of
+{value,{UU,Us}}->
+case lists:keysearch(<<"retweet_count">>,1,N) of
+{value,{SS,Ss}}->
+case lists:keysearch(<<"lang">>,1,Z) of
+{value,{LL,Ls}}->
+Obj1=[{SS,Os+Ss},{UU,Qs+Us},{LL,Ls}],
+Object=riakc_obj:update_value(Fetched1,Obj1),
+riakc_pb_socket:put(Pid,Object,[return_body])
+io:format("OLd key is now updated ~tp~n",[Bin]),
+io:format("OLd value is now updated ~p~n",[N])
+end
+end
+end
+end
+end
+end.
 
 %checks if a list is empty or not
 check(KeyList)->case KeyList of 
