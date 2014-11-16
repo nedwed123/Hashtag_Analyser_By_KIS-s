@@ -73,13 +73,14 @@ Id=fetch_key(L),
 case check(Id)of
 true-> 
 handleInput(Id, Bd);
-_->ok	end;
+_->ok
+end;
 save_tweet(_, _) -> ok.
 
 %Checks whether a tag has already been put to riak as key or not. if it has not been it will put the  object as new, otherwise fetches the old key and adds the retweets and favorite counts to it. 
 
 handleInput(Bin,N)->
-{ok,Pid}=riakc_pb_socket:start_link("127.0.0.1", 10027),
+{ok,Pid}=riakc_pb_socket:start_link("127.0.0.1", 10017),
 X= riakc_pb_socket:get(Pid, <<"tweets">>,list_to_binary(string:to_lower(binary_to_list(list_to_binary(Bin))))),
 case X  of
 {error,notfound}->		
@@ -89,35 +90,23 @@ io:format("New Value is ~p~n",[N]),
 riakc_pb_socket:put(Pid, ObjNew, [{w, 0}]);
 
 {ok,Fetched1}-> Z= binary_to_term(riakc_obj:get_value(Fetched1)),
-case lists:keysearch(<<"favorite_count">>,1,Z) of
-{value,{_,Qs}}->
-case lists:keysearch(<<"retweet_count">>,1,Z) of
-{value,{_,Os}}->
-case lists:keysearch(<<"favorite_count">>,1,N) of
-{value,{UU,Us}}->
-case lists:keysearch(<<"retweet_count">>,1,N) of
-{value,{SS,Ss}}->
-case lists:keysearch(<<"lang">>,1,Z) of
-{value,{LL,Ls}}->
+case Z of
+[Os,Qs,Ls]->
+case N of 
+[Ss,Us,_]->
 
-Obj1=[{SS,Os+Ss},{UU,Qs+Us},{LL,Ls}],
+Obj1=[(Os+Ss),(Qs+Us),Ls],
 Object=riakc_obj:update_value(Fetched1,Obj1),
 riakc_pb_socket:put(Pid,Object,[return_body]),
-io:format("OLd key is now updated ~tp~n",[Bin]),
-io:format("OLd value is now updated ~p~n",[Z]),
-io:format("new object is ~p~n",[Obj1])
-end;
+io:format("OLd key  ~tp~n",[Bin]),
+io:format("OLd value  ~p~n",[Z]),
+io:format("updated value is ~p~n",[Obj1]);
 _->ok
 end;
 _->ok
-end;
-_->ok
-end;
-_->ok
-end;
-_->ok
-
+end
 end.
+
 
 %checks if a list is empty or not
 check(KeyList)->case KeyList of 
@@ -131,15 +120,15 @@ decorate([_|T])->
 case lists:keysearch(<<"user">>,1,T)of
 {value,{_,{O}}}->
 case lists:keysearch(<<"lang">>,1,O)of
-{value,{Z,Zs}}->Q=[{Z,Zs}]
+{value,{_,Zs}}->Q=[binary_to_list(Zs)]
 end
 end,
 
 case  lists:keysearch(<<"retweeted_status">>,1,T) of
 {value, {_,{Ps}}}->
 case lists:keysearch(<<"favorite_count">>,1, Ps)of
-{value,{R,Rs}}->case lists:keysearch(<<"retweet_count">>,1,Ps)of
-{value,{E,Es}}->[{E,Es},{R,Rs}]++Q
+{value,{_,Rs}}->case lists:keysearch(<<"retweet_count">>,1,Ps)of
+{value,{_,Es}}->[Es,Rs]++Q
 end
 end;
 _->Q
