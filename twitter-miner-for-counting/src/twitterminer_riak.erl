@@ -72,7 +72,11 @@ case check(Bd)of
 true->
 io:format("Value is~p~n",[Bd]),
  io:format("Key is ~p~n",[list_to_binary(integer_to_list(I))]),
-Obj = riakc_obj:new(<<"tweets">>, list_to_binary(integer_to_list(I)), Bd),
+{Y,M,D}=erlang:date(),
+%% Here we make date into a binary like: <<"20141118">>
+Date_bin= list_to_binary(lists:map(fun erlang:integer_to_list/1, [Y, M, D])),
+
+ Obj = riakc_obj:new(Date_bin, list_to_binary(integer_to_list(I)), Bd),
 riakc_pb_socket:put(R, Obj, [{w, 0}]);
 _-> ok
 end;
