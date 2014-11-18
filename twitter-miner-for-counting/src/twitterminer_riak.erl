@@ -71,8 +71,7 @@ Bd=fetch_value(L),
 case check(Bd)of
 true->
 io:format("Value is~p~n",[Bd]),
- io:format("Key is ~p~n",[list_to_binary(integer_to_list(I))]); 
-
+ io:format("Key is ~p~n",[list_to_binary(integer_to_list(I))]),
 Obj = riakc_obj:new(<<"tweets">>, list_to_binary(integer_to_list(I)), Bd),
 riakc_pb_socket:put(R, Obj, [{w, 0}]);
 _-> ok

@@ -26,7 +26,7 @@ twitter_example() ->
   Keys = twitterminer_source:get_account_keys(account1),
 
   RHP = get_riak_hostport(riak1),
-  {ok, R} = riakc_pb_socket:start("127.0.0.1", RHP#hostport.port),
+  {ok, R} = riakc_pb_socket:start(RHP#hostport.host, RHP#hostport.port),
 
   % Run our pipeline
   P = twitterminer_pipeline:build_link(twitter_save_pipeline(R, URL, Keys)),
@@ -80,11 +80,15 @@ save_tweet(_, _) -> ok.
 %Checks whether a tag has already been put to riak as key or not. if it has not been it will put the  object as new, otherwise fetches the old key and adds the retweets and favorite counts to it. 
 
 handleInput(Bin,N)->
+%% here you input your riak node port and public host (when server is public)
 {ok,Pid}=riakc_pb_socket:start_link("127.0.0.1", 10017),
-X= riakc_pb_socket:get(Pid, <<"tweets">>,list_to_binary(string:to_lower(binary_to_list(list_to_binary(Bin))))),
+{Y,M,D}=erlang:date(),
+%% Here we make date into a binary like: <<"20141118">>
+Date_bin= list_to_binary(lists:map(fun erlang:integer_to_list/1, [Y, M, D])),
+X= riakc_pb_socket:get(Pid, Date_bin,list_to_binary(string:to_lower(binary_to_list(list_to_binary(Bin))))),
 case X  of
 {error,notfound}->		
-ObjNew = riakc_obj:new(<<"tweets">>, list_to_binary(string:to_lower(binary_to_list(list_to_binary(Bin)))), N),
+ObjNew = riakc_obj:new(Date_bin, list_to_binary(string:to_lower(binary_to_list(list_to_binary(Bin)))), N),
 io:format("New Key is ~tp~n",[string:to_lower(binary_to_list(list_to_binary(Bin)))]),
 io:format("New Value is ~p~n",[N]),
 riakc_pb_socket:put(Pid, ObjNew, [{w, 0}]);
@@ -103,8 +107,21 @@ io:format("OLd value  ~p~n",[Z]),
 io:format("updated value is ~p~n",[Obj1]);
 _->ok
 end;
+[Lx]->
+case N of 
+[Sx,Ux,_]->
+Obj2=[Sx,Ux,Lx],
+Object2=riakc_obj:update_value(Fetched1,Obj2),
+riakc_pb_socket:put(Pid,Object2,[return_body]),
+io:format("OoooLd key  ~tp~n",[Bin]),
+io:format("OoooLd value  ~p~n",[Z]),
+io:format("uuuupdated value is ~p~n",[Obj2]);
+
 _->ok
 end
+end;
+_->ok
+
 end.
 
 
@@ -148,5 +165,7 @@ hashFormat(U)->hashFormat(U,[]).
 hashFormat([],W)->W;
 hashFormat([H|_],W)->case H of
 {[{_,R},_]}->[R]++W
+%%if you want all the hashtags u put this:
+%%{[{_,R},_]}->[R|hashFormat(T,W)]++W 
 end.
 

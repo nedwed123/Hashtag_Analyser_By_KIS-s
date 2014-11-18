@@ -4,5 +4,5 @@
               {registered,[]},
               {applications,[kernel,stdlib,ibrowse,ssl]},
               {env,[]},
-              {modules,[tp,twitterminer_pipeline,twitterminer_riak,
+              {modules,[twitterminer_pipeline,twitterminer_riak,
                         twitterminer_source]}]}.
