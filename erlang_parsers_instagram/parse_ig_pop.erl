@@ -26,9 +26,9 @@ Q = req(),
 io:format("~p ~n ~p ~n ~p ~n ~p ~n",[Z,Y,D,Q]).
 
 %Gets the popular hashtags from instagram API and decode the json message and
-% peforms a keysearch for "data" returns 2 lists
+% peforms a keysearch for "data" returns 2 lists.(Change access token to own)
 req()->
-URL="https://api.instagram.com/v1/media/popular?access_token=511546223.4dc6143.f86f1a1df18d45d3865cd4b75387beb3",
+URL="https://api.instagram.com/v1/media/popular?access_token=ACCESS_TOKEN",
 case ibrowse:send_req(URL,[],get) of
 {ok,_,_,Body} -> decorate(Body)
 end.
