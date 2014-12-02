@@ -6,7 +6,7 @@
 %Parsing the latest popular tags used in instagram from instagram API link below
 
 -module(parse_ig_pop).
--compile(export_all).
+-export([start/0, check_req/0, req/0, store_tags/2, remove_binary/1, parse_tags/2]).
 
 %Start the SSL encryption and ibrowse. Requested everytime starting Erlang shell
 start()->
