@@ -47,7 +47,7 @@ pmap_id() ->
 %%--------------------------------------------------------------------
 %% @doc
 %% Remove empty lists and ok from the NewList in pmap_id/0 to return a list
-%% that has tags only.
+%% that has numbers only.
 %% @end
 %%--------------------------------------------------------------------
 format_list([])->[];
