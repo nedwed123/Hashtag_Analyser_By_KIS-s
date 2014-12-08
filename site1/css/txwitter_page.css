@@ -1,0 +1,402 @@
+
+body{
+  font-family: 'Raleway', sans-serif;
+}
+*{
+  
+  margin: 0;
+  padding: 0;
+}
+/*--------------------------------------header box---------------------------------------------------------------------*/
+#instagram_header{
+  display: block;
+  position: static;
+  border: 1px solid black;
+  border-color: #266072;
+  width: 1250;
+  height: 70;
+  margin: 11px auto;
+  padding: 16px;
+  
+  background: #348095;
+  box-shadow: 5px 5px 5px #ADB0B0;
+  display: -webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-box-flex:1;
+
+}
+#div_topHeader h1{
+
+  display: block;
+  position: static;
+  text-align: left;
+  font-family: inherit;
+  font: bold 40px inherit;
+  color: white;
+  margin-left: 130px;
+
+}
+#div_topHeader h3{
+  display: block;
+  text-align: left;
+  font-size: 12px;
+  margin-left: 230px;
+  margin-top: 5px;
+  font-style: normal;
+  color: #bdaab8;
+
+}
+/*---------------------------background pic----------------------------------------------------------------------------*/
+#background{
+  display: block;
+  position: static;
+  width: 1280px;
+  height: 900px;
+  background: url("../images/background.png");
+
+}
+#transbox{
+  display: block;
+  position: static;
+  width: 1000px;
+  height: 700px;
+  margin: 0px 50px 30px 150px;
+  background-color: white;
+  border: 1px solid black;
+  
+  filter:alpha(opacity=60); /* For IE8 and earlier */
+}
+#transbox article h1{
+  
+  font-size: 15px;
+  font-style: normal;
+  display: block;
+  position: static;
+  color: #716C73;
+  text-align: left;
+  
+  
+    -webkit-column-count: 1; /* Chrome, Safari, Opera */
+    -moz-column-count: 1; /* Firefox */
+    column-count: 1;
+    -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 40px; /* Firefox */
+    column-gap: 40px;
+}
+
+#main_section{
+  display: block;
+  position: static;
+  float: left;
+  width: 660px;
+  margin: 30px;
+}
+article{
+  display: block;
+  position: static;
+  border: 1 solid block;
+  padding: 20px;
+  margin: 15px;
+
+}
+
+/*------------------------------------------------------search box-----------------------------------------------*/
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+
+input {
+  border: 1px solid #dbdbdb;
+  font-family: sans-serif;
+  font-style: italic;
+  font-size: inherit;
+  line-height: 1.5em;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  -webkit-appearance: none;
+}
+
+input[type="search"] {
+
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+
+}
+
+.clearfix { *zoom: 1; }
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table; 
+}
+.clearfix:after { clear: both; }
+
+.container {
+
+  height: 44px;
+  left: 50%;
+  margin: -22px 0 0 -141px;
+  position: absolute;
+  top: 50%;
+}
+
+/* ---------------------------------------------SEARCH ------------------------------ */
+
+#search {
+  background: #EDEDED;
+  border-radius: 3px;
+  display: inline-block;
+  margin-left: -10;
+  margin-top: 30px;
+  padding: 8px;
+}
+
+#search input {
+
+  float: left;
+}
+
+#search input[type="search"],
+#search input[type="submit"] {
+
+  border-radius: 3px;
+  font-size: 15px;
+
+}
+
+#search input[type="search"] {
+  box-shadow:3px 3px 3px #EDEDED;
+  background: #fff;
+  color: #7e7e7e;
+  min-width: 300px;
+  padding: 6px 8px;
+}
+/* this part chang color of the txt box when we put mouse on it*/
+#search input[type="search"]:hover {
+  background: darkGray;
+}
+
+#search input[type="submit"] {
+  box-shadow:3px 3px 3px #EDEDED;
+  background: #478fa0 ;
+  color: white;
+  width: 40px;
+  font-style: normal;
+  font-weight: bold;
+  margin-left: 7px;
+  padding: 6px 10px;
+}
+/* this part chang color of the go bottun when we put mouse on it*/
+#search input[type="submit"]:hover {
+  background: darkGray;
+}
+
+#search input[type="search"]::-webkit-input-placeholder { color: #42454e; }
+#search input[type="search"]:-moz-placeholder { color: #42454e; }
+#search input[type="search"]:-ms-input-placeholder { color: #42454e; }
+
+/* ---------------------- ------ check box-------------------- ------------------------------*/
+
+input[type=checkbox].css-checkbox {
+    position:absolute; 
+    z-index:-1000; 
+    left:-1000px; 
+    overflow: 
+    hidden; 
+    clip: 
+    rect(0 0 0 0); 
+    height:1px; 
+    width:1px; 
+    margin:100px; 
+    padding:0; 
+    border:0;
+}
+input[type=checkbox].css-checkbox + label.css-label {
+  padding-left:25px;
+  height:20px; 
+  display:inline-block;
+  line-height:20px;
+  background-repeat:no-repeat;
+  margin-left: 30px
+  background-position: 0 0;
+  font-size:20px;
+  vertical-align:middle;
+  cursor:pointer;
+
+}
+
+input[type=checkbox].css-checkbox:checked + label.css-label {
+  background-position: 0 -20px;
+}
+label.css-label {
+  background-image:url("../images/checkBox.jpg");
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#checkBox_div{
+
+  color:#716c73; 
+  padding:2px;
+}
+#checkBox_div table {
+  margin-top:100px;
+  margin-left:-10px;
+  padding-right:10px;
+
+
+}
+    /* lable of check box position*/
+.css-label{
+
+  margin-left:10px;
+  margin-right: 70px
+}
+
+   /* information button/icon positon and style*/
+
+#boutton_i1{
+  
+  display:block;
+    width:20px;
+    height:20px;
+    border: 1px solid #f5f5f5;
+    border-radius: 50%;
+    color:#f5f5f5;
+    text-align:center;
+    text-decoration:none;
+    background: #478fa0;
+    box-shadow: 0 0 4px gray;
+    font-size:18px;
+    font-weight:normal; 
+    outline: 0;
+}
+#boutton_i1 {
+  margin-left:110px;
+  margin-top: -18px; 
+
+}
+
+
+/* --------------------------text field part--------------------------------------------------------------*/
+/*compare lable*/
+
+
+/* ---------------------------------------------SEARCH ------------------------------ */
+#label h1{
+   
+  margin-left: 2px;
+  margin-top: -35px;
+  width: 110px;
+  font-size: 19px;
+  
+}
+.label-textarea {
+  width: 200px;
+  margin-top: 5px;
+  margin-left: 115px;
+}
+
+
+#searchtext {
+  
+  
+  display: inline-block;
+  margin-left: 105px;
+  margin-top: 18px;
+  padding: 8px;
+
+}
+
+#searchtext input {
+
+  float: left;
+}
+
+#searchtext input[type="search"]{
+
+  
+  font-size: 15px;
+
+}
+
+#searchtext input[type="search"] {
+ border: none;
+  color: #7e7e7e;
+  min-width: 230px;
+  padding: 6px 8px;
+}
+/* this part chang color of the txt box when we put mouse on it*/
+#searchtext input[type="search"]:hover {
+  background: darkGray;
+}
+
+
+
+#search input[type="search"]::-webkit-input-placeholder { color: #42454e; }
+#search input[type="search"]:-moz-placeholder { color: #42454e; }
+#search input[type="search"]:-ms-input-placeholder { color: #42454e; }
+
+
+   /* information button/icon positon and style*/
+
+#boutton_i2{
+  
+  display:block;
+    width:20px;
+    height:20px;
+    border: 1px solid #f5f5f5;
+    border-radius: 50%;
+    color:#f5f5f5;
+    text-align:center;
+    text-decoration:none;
+    background: #478fa0;
+    box-shadow: 0 0 4px gray;
+    font-size:18px;
+    font-weight:normal; 
+    outline: 0;
+}
+#boutton_i2 {
+  margin-left:380px;
+  margin-top: -20px; 
+
+}
+
+
+/*-------------------------------------------map-------------------------------------------------------------*/
+
+#map{
+  width: 400px;
+  height: 400px;
+    margin-top: -350px ;
+    margin-bottom: 400px;
+    margin-right: 300px;
+    margin-left: 400px;
+
+  
+}
+
+
+
+
+canvas{
+    pointer-events: none;       /* make the canvas transparent to the mouse - needed since canvas is position infront of image */
+
+    position: absolute;
+
+}

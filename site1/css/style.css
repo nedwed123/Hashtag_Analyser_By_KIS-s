@@ -1,0 +1,123 @@
+ body{
+            display: block;
+   
+}
+.mainDive {
+    width 1200px;
+    height: 400px;
+    display: inline-block;
+    margin: 100px 73px 20px  73px;
+    
+}
+
+    .mainDive h2{
+    border-width: medium;
+   font-family: Geneva, Arial, Helvetica, sans-serif;
+   font-size: 20px;
+   color: #606060;
+   font-weight: bold;
+   padding: 15px 20px 10px 30px;
+    display: inline-block;
+    text-align: left;
+    
+}
+
+
+    .boxSocialMedia{
+    height: 200px;
+    width: 550px;
+    display:inline-block;
+
+    
+}
+.boxcontry{
+    height: 200px;
+    width: 550px;
+    visibility: hidden;
+
+}
+
+
+.boxKindTwitter{
+    height: 100px;
+    width: 550px;
+   visibility:hidden;
+   
+}
+.boxKindInstagram{
+    height: 100px;
+    width:550px;
+
+    visibility: hidden;
+}
+
+
+
+.checkbox {
+    display: inline-block;
+    cursor: pointer;
+    font-size:20px; margin-right:10px; line-height:18px;
+}
+
+
+input[type=checkbox] {
+ display:none;  
+}
+
+.checkbox:before {
+    content: " ";
+    display: inline-block;
+    width: 30px;
+    height: 25px;
+    vertical-align:middle;
+    
+    color: #f3f3f3;
+    text-align: center;
+    box-shadow: inset 4px 3px 2px 0px rgba(255, 41, 100, .9), 0px 1px 0px 3px rgba(255, 41, 100, .9);   
+    border-radius: 9px;
+    
+}
+input[type=checkbox]:checked + .checkbox:before {
+    content: "\2713";
+    font-size: 45px;
+    text-shadow: 1px 5px 1px rgba(33, 145, 113, .9);
+    color: #09ad7e;
+        
+}
+
+<!-- instagram likes result -->
+.coldsoup{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.coldsoup li{
+    width: 100%;
+    clear /* clear contents of inner span, which will be floated left */
+    overflow: hidden; /* clear contents of inner span, which will be floated left */
+}
+
+.coldsoup li span{
+    display: block;
+    float /* cause width of each span to take up only as much space as needed */
+    min-width: 0px; /* animated property. Explicit min-width defined so animation works. */
+    margin-bottom: 5px;
+    padding: 8px;
+    color: #5d5d5d;
+}   
+
+.coldsoup li span{
+    color: #fff;
+    background: #1c3871;
+    border: 8px solid darkred;
+    min-width: 450px; /* animated property. Set to desired final length of background */
+    -webkit-box-shadow: 0 0 5px gray;
+    -moz-box-shadow: 0 0 5px gray;
+    box-shadow: 0 0 5px gray;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+<!-- instagram likes result-->
