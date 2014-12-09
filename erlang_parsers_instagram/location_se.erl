@@ -60,8 +60,6 @@ end.
 %% @doc
 %% Get the ids for the other locations . The function will iterate 
 %% through the list received from save_id/2 and retruns the ids for all locations. 
-%% 
-%%
 %% @end
 %%--------------------------------------------------------------------
 
@@ -81,8 +79,6 @@ end.
 %% @doc
 %% Spawn process depending on the number of ids available and 
 %% get the tags in each ID.
-%% 
-%%
 %% @end
 %%--------------------------------------------------------------------
 pmap() ->
