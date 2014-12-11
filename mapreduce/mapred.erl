@@ -6,7 +6,7 @@
 % register(lol,Pid).
 
 makeList()->
-{ok,Pid}=riakc_pb_socket:start("54.171.161.63", 10037),
+{ok,Pid}=riakc_pb_socket:start("?????", 10037),
 {Y,M,D}=erlang:date(),
 %% Here we make date into a binary like: <<"20141118">>
 Bucket= list_to_binary(lists:map(fun erlang:integer_to_list/1, [Y, M, D])),
