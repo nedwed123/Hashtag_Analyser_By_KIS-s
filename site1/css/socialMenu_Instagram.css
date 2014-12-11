@@ -11,6 +11,7 @@ width: 170px;
   position: fixed;
   margin-top: -320px;  
  margin-left: 795px;
+ font-size: 12px;
 }
 .social ul {
   width: 160px;
@@ -85,7 +86,7 @@ direction: rtl;
   border-radius: 50%;
   width: 20px;
   height: 20px;
-  font-size: 18px;
+  font-size: 20px;
   background: #ffffff;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);

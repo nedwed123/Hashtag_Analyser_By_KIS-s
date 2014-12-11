@@ -10,7 +10,9 @@
 <body>
 <?php 
 session_start();						
-							
+?>
+
+<?php						
 $word=$_SESSION['Test'];
 //$word="love";
 //$word="گربه";

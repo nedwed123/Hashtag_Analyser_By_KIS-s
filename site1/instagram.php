@@ -13,6 +13,7 @@
 		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css"> 
   		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	</head>
+			 					
 
 <body onload='myInit()'>
 		<script>
@@ -309,7 +310,7 @@ $("#currentVal").html(ui.value);
 							          		<li><a href="http://site1.local/index.php">Home<i class="fa fa-home"></i></a></li>
 							          		<li><a href="http://site1.local/instagram.php">Instagram <i class="fa fa-instagram"></i></a></li>
 							             	<li><a href="http://site1.local/twitter.php">Twitter <i class="fa fa-twitter"></i></a></li>
-							             	<li><a href="#">Info<i class="fa fa-comment"></i></a></li>
+							             	<li><a href="#">Comments<i class="fa fa-comment"></i></a></li>
 
 							          </ul>
 							      </div>
@@ -377,7 +378,9 @@ $("#currentVal").html(ui.value);
 		 </div>
 		 					<?php
 		 					session_start();
-							
+		 					?>
+		 					
+		 					<?php
 							$_SESSION['Test'] = $_POST["searchBox"];
 							$_SESSION['Test1']= $_POST["searchBoxi"];
 

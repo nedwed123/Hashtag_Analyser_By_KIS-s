@@ -297,10 +297,10 @@ $("#currentVal").html(ui.value);
 
 							  <div class="social">
 							          <ul>
-							              <li><a href="http://site1.local/index.php">Home<i class="fa fa-home"></i></a></li>
-							          		<li><a href="http://site1.local/instagram.php">Instagram <i class="fa fa-instagram"></i></a></li>
+											<li><a href="http://site1.local/index.php">Home<i class="fa fa-home"></i></a></li>
+											<li><a href="http://site1.local/instagram.php">Instagram <i class="fa fa-instagram"></i></a></li>
 							             	<li><a href="http://site1.local/twitter.php">Twitter <i class="fa fa-twitter"></i></a></li>
-							             	<li><a href="#">Info<i class="fa fa-comment"></i></a></li>
+							             	<li><a href="#">Comments<i class="fa fa-comment"></i></a></li>
 							              
 							          </ul>
 							      </div>
@@ -380,7 +380,7 @@ $("#currentVal").html(ui.value);
 
 							<?php
 		 					session_start();
-							
+
 							$_SESSION['Test'] = $_POST["searchBox"];
 							$_SESSION['Test1']= $_POST["searchBoxi"];
 							if (isset($_POST['Recent'])){
@@ -392,4 +392,3 @@ $("#currentVal").html(ui.value);
 	</body>
 </html>
 
- 

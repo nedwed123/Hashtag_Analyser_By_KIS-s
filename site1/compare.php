@@ -7,8 +7,11 @@
 </head>
 
 <body>
+<?php 
+session_start();                        
+?>
+
 <?php
-session_start();
 $word=$_SESSION['Test'];
 $word2=$_SESSION['Test1'];
 $link = peb_connect("cat@food", "abc"); 

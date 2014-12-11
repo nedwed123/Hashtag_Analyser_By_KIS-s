@@ -9,7 +9,10 @@
 
 <body>
 <?php 
-session_start();                     
+session_start();                        
+?>
+
+<?php                     
 $word=$_SESSION['Test'];
   // $word="snowy";
 $link = peb_connect("cat@food", "abc"); 

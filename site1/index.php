@@ -8,6 +8,9 @@
   <link rel="stylesheet" type="text/css" href="css/home_page.css"/>
       <link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'> 
 
+<?php
+session_start();
+?> 
 
 </head>
 <body>
