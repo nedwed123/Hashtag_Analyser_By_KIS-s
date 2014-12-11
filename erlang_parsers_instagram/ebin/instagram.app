@@ -1,0 +1,11 @@
+{application,instagram,
+             [{description,[]},
+              {vsn,"1"},
+              {registered,[]},
+              {applications,[kernel,stdlib]},
+              {mod,{instagram_app,[]}},
+              {env,[]},
+              {modules,[id_dn,id_fn,id_ge,id_noy,id_se,instagram,
+                        instagram_app,instagram_sup,location_dn,location_fn,
+                        location_noy,location_se,nedparse,parse,parse_tag,
+                        server,parse_ig_pop]}]}.

@@ -1,0 +1,168 @@
+<!-- search box -->
+
+.clearfix {
+  display: block;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+ /* background: #FFFFFF url(../images/body.png);
+  background: repeat fixed; */
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #34495e;
+  font-size: 14px;
+}
+
+header {
+  background: #FFFFFF url(../images/goop.png) no-repeat right top;
+ /* background: #FFFFFF url(../images/body.png); */
+  colro: white;
+}
+
+header #SB {
+  position: relative;
+}
+header #SB .inner {
+  width: 900px;
+  margin: 0 auto;
+}
+header #SB .inner #demo-input {
+  position: relative;
+  width: 65%;
+  margin: 0 auto;
+  padding: 150px 0 50px 0;
+}
+header #SB .inner #demo-input input {
+  border: 5px solid #34495e;
+  font-size: 48px;
+  padding: 5px;
+  width: 100%;
+  outline: 0;
+  color: #22313d;
+}
+header #slide {
+  position: relative;
+}
+
+header #SB #tagbox { /* bluegreen */
+  top: 60px;
+  left: 50%;
+  position: absolute;
+  background: #FF9900;
+  padding: 10px 20px;
+  width: 250px;
+  margin-left: -350px;
+}
+header #SB #tagbox:after { /* bluegreen */
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(136, 183, 213, 0);
+  border-top-color: #FF9900;
+  border-width: 10px;
+  margin-left: -10px;
+}
+<!-- search box -->
+
+<!-- scroll bar -->
+
+	.clearfix:after {  content: "."; display:block; font-size:0; line-height:0; height:0; clear:both; visibility:hidden; }
+	.clearfix { display:inline-block; }		
+	* html .clearfix { height:1%; }
+	.clearfix { display:block; }
+
+	body {margin:0; background:#FFF url(../images/body11.png); -webkit-text-size-adjust:100%; -moz-text-size-adjust:100%; padding:10px 2%; font:14px/24px 'Open Sans', Helvetica, Arial, sans-serif  ; color:#000;}	
+	/** #slider { background:#FFFFFF; width:1200px; margin:0 auto; border:solid 0px #FFFFFF; border-top:5px solid #FFFFFF; border-radius:6px; box-shadow:0 0 3px rgba(0,0,0,0.2), inset 0 4px 0 #ededed } **/
+	#header { padding:30px 20px; border-bottom:solid 1px #e0e0e0; margin-bottom:20px; text-align:center; font-family:'Open Sans', sans-serif;}
+	#logo { display:inline-block; font-weight:300;  margin:0 0 0px; font-size:30px; line-height:24px;  color:#000; text-decoration:none; position:relative;  }
+	#logo span{ color:#0088cc;}
+	
+	section { padding:0 20px 20px}
+	h2{ font:300 22px/30px 'Open Sans', sans-serif;  margin:0 0 10px 0; padding:0}
+	h2 span{color:#0088cc;}
+	.classname { display:block;  padding:20px;  border:solid 2px #CCC; text-align:center;}
+	
+<!-- scroll bar -->
+
+<!--- check box --->
+
+h1 {
+    font-size: 34px;
+    font-family: fantasy;
+    color: gray;
+    font-weight: bolder;
+}
+.boxSocialMedia{
+    height: 200px;
+    width: 500px;
+   
+    float:left;
+    padding: 15px 20px 10px 30px;
+    margin: 100px 100px -70px 35px;
+    
+}
+.boxCountry{
+    height: 200px;
+    width: 500px;
+    float:left;
+    padding: 15px 20px 25px 30px;
+    margin: 100px 188px -200px 35px;
+   
+    
+    
+}  
+.boxGender{
+    height: 200px;
+    width: 500px;
+    float:right;
+    padding: 15px 20px 25px 30px;
+    margin: -235px 35px -200px 100px;
+   
+}
+.boxKind{
+    height: 200px;
+    width: 500px;
+    float: right;
+    padding: 15px 20px 25px 30px;
+    margin: 1px 35px -300px 100px;
+    
+}
+.checkbox {
+	display: inline-block;
+	cursor: pointer;
+	font-size:20px; margin-right:10px; line-height:18px;
+}
+input[type=checkbox] {
+ display:none;	
+}
+.checkbox:before {
+	content: " ";
+	display: inline-block;
+	width: 30px;
+	height: 25px;
+	vertical-align:middle;
+	
+	color: #f3f3f3;
+	text-align: center;
+	box-shadow: inset 4px 3px 2px 0px rgba(255, 41, 100, .9), 0px 1px 0px 3px rgba(255, 41, 100, .9);	
+	border-radius: 9px;
+    
+}
+input[type=checkbox]:checked + .checkbox:before {
+	content: "\2713";
+    font-size: 45px;
+	text-shadow: 1px 5px 1px rgba(33, 145, 113, .9);
+    color: #09ad7e;
+    	
+}
+<!--- check box --->
