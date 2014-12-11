@@ -68,16 +68,26 @@ twitter_save_pipeline(R, URL, Keys) ->
 save_tweet(R, {parsed_tweet, _L, B, {id, I}}) ->
 {L}=jiffy:decode(B),
 Bd=fetch_value(L),
+%Bb=list_to_binary(string:to_lower(binary_to_list(list_to_binary(Ba)))),
+%Bd=[Bb],
+
 case check(Bd)of
 true->
-io:format("Value is~p~n",[Bd]),
  io:format("Key is ~p~n",[list_to_binary(integer_to_list(I))]),
+io:format("Value is~p~n",[Bd]),
 {Y,M,D}=erlang:date(),
 %% Here we make date into a binary like: <<"20141118">>
 Date_bin= list_to_binary(lists:map(fun erlang:integer_to_list/1, [Y, M, D])),
-
+io:format("Bucket is ~p~n", [Date_bin]),
  Obj = riakc_obj:new(Date_bin, list_to_binary(integer_to_list(I)), Bd),
-riakc_pb_socket:put(R, Obj, [{w, 0}]);
+%%secondary indexing
+MD1 = riakc_obj:get_update_metadata(Obj),
+MD2 = riakc_obj:set_secondary_index(
+    MD1,
+    [{{binary_index, Date_bin}, Bd}]),
+Obj2 = riakc_obj:update_metadata(Obj, MD2),
+
+riakc_pb_socket:put(R, Obj2, [{w, 0}]);
 _-> ok
 end;
 save_tweet(_, _) -> ok.
@@ -97,7 +107,7 @@ end.
 hashFormat(U)->hashFormat(U,[]).
 hashFormat([],W)->W;
 hashFormat([H|T],W)->case H of
-{[{_,R},_]}->[R]++W
+{[{_,R},_]}->[string:to_lower(binary_to_list(R))]++W
 %%if you want all the hashtags u put this:
 %%{[{_,R},_]}->[R|hashFormat(T,W)]++W 
 end.

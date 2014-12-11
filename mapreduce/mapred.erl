@@ -1,13 +1,15 @@
 -module(mapred).
--export([mapred/0, maptags/3, redtags/2,makeList/0]).
+-export([mapred/0, maptags/3, redtags/2,makeList/0,removeTuples/1]).
 
-start()->
-{ok,Pid}=riakc_pb_socket:start("127.0.0.1", 10037),
- register(lol,Pid).
+
+%start()->
+% register(lol,Pid).
 
 makeList()->
-Bucket= <<"20141128">>,
-Pid=whereis(lol), 
+{ok,Pid}=riakc_pb_socket:start("54.171.161.63", 10037),
+{Y,M,D}=erlang:date(),
+%% Here we make date into a binary like: <<"20141118">>
+Bucket= list_to_binary(lists:map(fun erlang:integer_to_list/1, [Y, M, D])),
 {ok,K}=riakc_pb_socket:list_keys(Pid, Bucket),
 recursiveListMaker(K,Bucket).
 
@@ -21,8 +23,12 @@ recursiveListMaker([],_,B)->B;
 recursiveListMaker([H|T],Buk,B)->L1= [{Buk,H}]++B,recursiveListMaker(T,Buk,L1).
 
 mapred() ->
+%{Y,M,D}=erlang:date(),
+%% Here we make date into a binary like: <<"20141118">>
+%Bucket= list_to_binary(lists:map(fun erlang:integer_to_list/1, [Y, M, D])),
+
  Keys=makeList(),
-Pid=whereis(lol),
+{ok,Pid}=riakc_pb_socket:start("54.171.161.63", 10037),
 
 	{ok, [{1, [Result]}]} = riakc_pb_socket:mapred(
 		Pid,
@@ -32,10 +38,25 @@ Pid=whereis(lol),
 			{reduce, {modfun, ?MODULE, redtags}, none, true}
 		]
 	),
-	dict:to_list(Result).
+	ListWithTuples=dict:to_list(Result),
+	T=lists:keysort(2,ListWithTuples),
+	S=lists:reverse(T),
+	removeTuples(S).
+
+
+removeTuples(L)->removeTuples(L,[]).
+removeTuples([],Buff)->Buff;
+removeTuples([H|T],Buff)->case H of
+{W,Ws}-> N=Buff++[W,Ws],
+removeTuples(T,N)
+end.
+
+
+
 
 maptags(RiakObject, _, _) ->  %We don't care about keydata or the static argument
-	[dict:from_list([{I, 1} || I <- binary_to_term(riak_object:get_value(RiakObject))])].
+	[dict:from_list([{
+I,1}|| I <- binary_to_term(riak_object:get_value(RiakObject))])].
 
 redtags(Input, _) ->  %Once again we don't care about the static argument
 [lists:foldl(fun(Tag, Acc) -> dict:merge(

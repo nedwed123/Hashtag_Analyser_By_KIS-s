@@ -81,7 +81,7 @@ save_tweet(_, _) -> ok.
 
 handleInput(Bin,N)->
 %% here you input your riak node port and public host (when server is public)
-{ok,Pid}=riakc_pb_socket:start_link("127.0.0.1", 10017),
+{ok,Pid}=riakc_pb_socket:start_link("54.171.161.63", 10017),
 {Y,M,D}=erlang:date(),
 %% Here we make date into a binary like: <<"20141118">>
 Date_bin= list_to_binary(lists:map(fun erlang:integer_to_list/1, [Y, M, D])),
@@ -91,6 +91,7 @@ case X  of
 ObjNew = riakc_obj:new(Date_bin, list_to_binary(string:to_lower(binary_to_list(list_to_binary(Bin)))), N),
 io:format("New Key is ~tp~n",[string:to_lower(binary_to_list(list_to_binary(Bin)))]),
 io:format("New Value is ~p~n",[N]),
+io:format("BUcket is ~p~n",[Date_bin]),
 riakc_pb_socket:put(Pid, ObjNew, [{w, 0}]);
 
 {ok,Fetched1}-> Z= binary_to_term(riakc_obj:get_value(Fetched1)),
