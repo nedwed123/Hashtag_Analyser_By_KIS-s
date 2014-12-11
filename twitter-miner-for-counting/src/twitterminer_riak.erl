@@ -107,7 +107,7 @@ end.
 hashFormat(U)->hashFormat(U,[]).
 hashFormat([],W)->W;
 hashFormat([H|T],W)->case H of
-{[{_,R},_]}->[R]++W
+{[{_,R},_]}->[string:to_lower(binary_to_list(R))]++W
 %%if you want all the hashtags u put this:
 %%{[{_,R},_]}->[R|hashFormat(T,W)]++W 
 end.
