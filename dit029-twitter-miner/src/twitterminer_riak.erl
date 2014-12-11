@@ -85,10 +85,12 @@ handleInput(Bin,N)->
 {Y,M,D}=erlang:date(),
 %% Here we make date into a binary like: <<"20141118">>
 Date_bin= list_to_binary(lists:map(fun erlang:integer_to_list/1, [Y, M, D])),
+%% Here we make the key to lower case . ps. the key is the uniwue hashtag
 X= riakc_pb_socket:get(Pid, Date_bin,list_to_binary(string:to_lower(binary_to_list(list_to_binary(Bin))))),
 case X  of
 {error,notfound}->		
 ObjNew = riakc_obj:new(Date_bin, list_to_binary(string:to_lower(binary_to_list(list_to_binary(Bin)))), N),
+
 io:format("New Key is ~tp~n",[string:to_lower(binary_to_list(list_to_binary(Bin)))]),
 io:format("New Value is ~p~n",[N]),
 io:format("BUcket is ~p~n",[Date_bin]),
