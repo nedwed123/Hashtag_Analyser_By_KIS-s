@@ -12,7 +12,7 @@
 %% ------------------------------------------------------------------
 
 -export([start_link/0,compare/2,get/1,getM/1,tags_sweden/1,tags_finland/1,tags_norway/1,
-	tags_denmark/1,likes_sweden/1,likes_finland/1,likes_norway/1,likes_denmark/1]).
+	tags_denemark/1,likes_sweden/1,likes_finland/1,likes_norway/1,likes_denemark/1]).
 
 %% ------------------------------------------------------------------
 %% gen_server Function Exports
