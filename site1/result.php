@@ -3,7 +3,7 @@
 <meta charset="utf-8">
         <link REL="SHORTCUT ICON" HREF="../images/icon.png">
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
-        <title>Media Count INstagram</title>
+        <title>Media Count Instagram</title>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 

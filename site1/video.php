@@ -1,4 +1,6 @@
-<html><body>
+<html>
+<title>Video</title>
+<body>
 <style>
 body {
     margin: 0;
