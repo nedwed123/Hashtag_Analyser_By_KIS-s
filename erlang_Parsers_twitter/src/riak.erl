@@ -2,7 +2,7 @@
 -compile(export_all).
 
 start_con()->
-    {ok, Pid} = riakc_pb_socket:start_link("54.171.161.63", 10017),
+    {ok, Pid} = riakc_pb_socket:start_link("127.0.0.1", port),
     register(riak,Pid),
     {ok,Pid}.
 
