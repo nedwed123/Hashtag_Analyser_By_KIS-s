@@ -3,7 +3,7 @@
 <meta charset="utf-8">
         <link REL="SHORTCUT ICON" HREF="../images/icon.png">
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
-        <title>Media Count</title>
+        <title>Media Count INstagram</title>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 
@@ -14,10 +14,9 @@ session_start();
 
 <?php                     
 $word=$_SESSION['Test'];
-  // $word="snowy";
 $link = peb_connect("cat@food", "abc"); 
 if (!$link) { 
-//    die('Could not connect: ' . peb_error()); 
+
     Header("Location: http://site1.local/404.php");
 } 
 
@@ -67,9 +66,7 @@ var wordJ = <?php echo '["' . implode('", "', $wo) . '"]' ?>;
 var numJ = <?php echo json_encode($num) ?>;
 
 
-/*if(numJ.length==0){
-window.location.replace("http://site1.local/404.php");
-}*/
+
 </script>
 
 

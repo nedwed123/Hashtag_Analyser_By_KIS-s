@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 		<link REL="SHORTCUT ICON" HREF="../images/icon.png">
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
-		<title>Likes</title>
+		<title>Likes Instagram</title>
 </head>
 
 <body>
@@ -68,12 +68,6 @@ echo"<br></br>";}
 
 }?>
 
-
-
-
-
-
-<!--     <a href="'".myImage1[i]."'" target="_blank" rel="nofollow"> </a>-->
 
 
 </body>

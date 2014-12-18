@@ -51,8 +51,8 @@ Header("Location: http://site1.local/404.php");
 
 peb_close($link);
 
-?>    
-    
+?>	  
+	  
     
     <div class="container">
       <h4>Sweden</h4>
