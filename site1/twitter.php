@@ -265,14 +265,38 @@ var x = ui.value;
 									
 									<!--#-->
 									<td >
-										   <input type="checkbox" name="Recent" value="Recent" id="Recent" class="css-checkbox" onclick="return true;" />
+										   <input type="checkbox" name="Recent" value="Recent" id="Recent" class="css-checkbox" onclick="recent()" />
 											<label for="Recent" class="css-label"><h1>Recent Count<h1></label>
 
 											     <a id="button1" href="#openModal2">
-											       <button id="boutton_i1">i</button>				
+											        <span title="Check this box if you would like to see how many times 
+recent hashtags have been used in our sample tweets.
+Remember: if you check this box then no other option 
+can be selected."><button id="boutton_i1">i</button>	</span>	
 												</a>
 											</label>
 										</td>
+											
+											
+<script type="text/javascript">
+function recent(){
+
+if(document.getElementById("Recent").checked ==false){
+	document.getElementById("searchBox").disabled = false;
+	document.getElementById("searchBoxi").disabled = false;
+	
+	}else if(document.getElementById("Recent").checked){
+		document.getElementById("searchBox").disabled = true;
+document.getElementById("searchBoxi").value = "";
+document.getElementById("searchBox").value = "";
+document.getElementById("searchBoxi").disabled = true;
+		}
+	
+
+}
+
+		</script>	
+
 																		   
 									 </tr>
 								</table>
@@ -290,11 +314,14 @@ var x = ui.value;
 								</form>
 							</div> 
 								
-							    <div id="label">
-								    <label for="compare" ><h1>Compare with: <h1></label>
+							 <div id="label">
+								    <label for="compare" ><h1>Compare with<h1></label>
 								</div>
 							<div id="text">					  
-								    <h1  class="label-textarea">........................................................................................</h1>
+								    <span title="Type in another hashtag to compare your primary 
+hashtag with. Remember: It may be that you enter a 
+hashtag that has never been used by any user. In that 
+case you will be redirected to the not found page."><h1  class="label-textarea"> ...................................................................................... </h1></span>
 								       
 											       <button id="boutton_i2">i</button>				
 									
@@ -315,7 +342,7 @@ var x = ui.value;
 							             	<li><a href="http://site1.local/comments.php">Comments<i class="fa fa-comment"></i></a></li>
 							              
 							          </ul>
-							      </div>
+							      </div> 
 							       				       
 							  </div>
 								</form>

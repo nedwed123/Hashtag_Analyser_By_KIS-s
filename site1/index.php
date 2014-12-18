@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <title>Index | Analyze Hashtag </title>
+  <title>Index | Hashtag Analyser </title>
   <link REL="SHORTCUT ICON" HREF="../images/icon.png">
   <link rel="stylesheet" type="text/css" href="css/home_page.css"/>
   <link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'> 

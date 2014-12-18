@@ -236,7 +236,7 @@ $("#currentVal").html(ui.value);
 								<label for="q" id="search-label"></label>
 								 
 								   <input required aria-labelledby="search-label" id="searchBox" placeholder="Search #..." type="search" name="searchBox" class="search-field" value=""> 
-								   <input type="submit" value="Go" class="button"></input>
+								   <input type="submit" value="Go" class="button" onclick="check()"></input>
 								
 							</div> 
 
@@ -256,43 +256,56 @@ $("#currentVal").html(ui.value);
 									
 									<!--like checkbox-->
 									<td >
-										   <input type="checkbox" name="Likes" value="Likes" id="Likes" class="css-checkbox" />
+										   <input type="checkbox" name="Likes" value="Likes" id="Likes" class="css-checkbox" onclick="likes()" />
 											<label for="Likes" class="css-label"><h1>Likes<h1></label>
 											     
-											       <button id="boutton_i1">i</button>				
+											    <span title="Check this box if you wish to view the number 
+of likes for your desired hashtag (the one you
+have typed in the serch field above)."><button id="boutton_i1">i</button></span>				
 												
 											</label>
 										</td>
 										<!--Media checkbox-->
 										<td >
-										   <input type="checkbox" name="MediaC" value="MediaC" id="MediaC" class="css-checkbox" />
+										   <input type="checkbox" name="MediaC" value="MediaC" id="MediaC" class="css-checkbox" onclick="media()" />
 											<label for="MediaC" class="css-label"><h1>Media<h1></label>
 											    
-											       <button id="boutton_i3">i</button>				
+											       <span title="Check this box if you wish to view the pictures 
+uploaded by users that have your desired 
+hashtag (the one you have typed in the 
+serch field above) tagged."><button id="boutton_i3">i</button></span>		
 												
 											</label>
 										</td>
-	<!--	<script type="text/javascript">
-function fish(){
+		<script type="text/javascript">
+function likes(){
 
-var aaa = document.getElementById('11');
-
-  aaa.addEventListener('click', function() {
-  var aaa = document.getElementById('11'); 
-    if( this.checked){
-      document.getElementById('22').checked = false;
-  }
-var bbb = document.getElementById('22');
-
-  bbb.addEventListener('click', function() {
-  var bbb = document.getElementById('22');
-  if(this.checked){
-  	document.getElementById('11').checked = false;
-  }
+document.getElementById("MediaC").checked = false;
+if(document.getElementById("searchBoxi").value.length>0){
+	document.getElementById("Likes").checked=false;
+	}
 }
-  
-window.onload = fish;
-		</script>				-->									   
+
+function media(){
+document.getElementById("Likes").checked=false;
+if(document.getElementById("searchBoxi").value.length>0){
+	document.getElementById("MediaC").checked=false;
+	}
+}
+
+function compare(){
+document.getElementById("Likes").checked=false;
+document.getElementById("MediaC").checked=false;
+
+}
+
+function check(){
+	if(document.getElementById("Likes").checked==false && document.getElementById("MediaC").checked==false){
+		alert("Please choose a checkbox!");
+		}
+	}
+
+		</script>											   
 									 </tr>
 								</table>
 							</div>
@@ -306,16 +319,19 @@ window.onload = fish;
 								 
 								
 
-								   <input  id="searchBoxi" placeholder="Search #..." type="search" name="searchBoxi" class="search-field" value=""> 
+								   <input  id="searchBoxi" placeholder="Search #..." type="search" name="searchBoxi" class="search-field" value="" onkeypress="compare()"> 
 								   
 								</form>
 							</div> 
 								
 							    <div id="label">
-								    <label for="compare" ><h1>Compare with: <h1></label>
+								    <label for="compare" ><h1>Compare with<h1></label>
 								</div>
 							<div id="text">					  
-								    <h1  class="label-textarea">..................................................................................</h1>
+								    <span title="Type in another hashtag to compare your primary 
+hashtag with. Remember: It may be that you enter a 
+hashtag that has never been used by any user. In that 
+case you will be redirected to the not found page."><h1  class="label-textarea">  ..................................................................................</h1></span>	
 								       
 											       <button id="boutton_i2">i</button>				
 									
