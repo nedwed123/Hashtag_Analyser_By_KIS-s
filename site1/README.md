@@ -85,7 +85,7 @@ In this page a user can write a comment about the site.
 ## mypeb - php erlang bridge copied from https://github.com/videlalvaro/mypeb
 
 Erlang files that need to be put in this site1 directory to function with mypeb 
-can be found in the erlang_parsers_instagram and erlang_parsers_instagram/src folder.
+can be found in the erlang_parsers_instagram and erlang_Parsers_twitter folders.
 
 ----------------------------
 Authors group KIS&S
