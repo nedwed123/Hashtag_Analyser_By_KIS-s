@@ -8,13 +8,14 @@ body{
   padding: 0;
 }
 /*--------------------------------------header box---------------------------------------------------------------------*/
+
 #instagram_header{
   display: block;
   position: static;
-  border: 1px solid black;
+  border: 1px solid grey;
   border-color: #266072;
-  width: 1250;
-  height: 70;
+  width: 100%;
+  height: 100px;
   margin: 11px auto;
   padding: 16px;
   
@@ -25,6 +26,12 @@ body{
   -webkit-box-flex:1;
 
 }
+#center_header{
+ margin-left: auto ;
+  margin-right: auto ;
+ 
+  width:1000px;
+}
 #div_topHeader h1{
 
   display: block;
@@ -33,14 +40,14 @@ body{
   font-family: inherit;
   font: bold 40px inherit;
   color: white;
-  margin-left: 130px;
+  margin-left: auto ;
+  margin-right: auto ;
 
 }
 #div_topHeader h3{
   display: block;
   text-align: left;
   font-size: 12px;
-  margin-left: 230px;
   margin-top: 5px;
   font-style: normal;
   color: #bdaab8;
@@ -48,21 +55,25 @@ body{
 }
 /*---------------------------background pic----------------------------------------------------------------------------*/
 #background{
+/*--------------changes----*/
   display: block;
-  position: static;
-  width: 1280px;
-  height: 900px;
+ 
  background: url("../images/background.png");
+ width: 100%;
+position: relative;
+margin:0 auto;
+line-height: 1.4em;
 
 }
 #transbox{
-  display: block;
-  position: static;
+    /*--------------changes----*/
+
   width: 1000px;
   height: 700px;
-  margin: 0px 50px 30px 150px;
+    margin-left: auto ;
+  margin-right: auto ;
   background-color: white;
-  border: 1px solid black;
+  border: 1px solid grey;
   
   filter:alpha(opacity=60); /* For IE8 and earlier */
 }
@@ -99,7 +110,6 @@ article{
   margin: 15px;
 
 }
-
 /*------------------------------------------------------search box-----------------------------------------------*/
 
 fieldset {
@@ -302,7 +312,7 @@ label.css-label {
     border: 1px solid #f5f5f5;
     border-radius: 50%;
     color:#f5f5f5;
-    text-align:left;
+    text-align:center;
     text-decoration:none;
     background: #478fa0;
     box-shadow: 0 0 4px gray;
@@ -311,8 +321,9 @@ label.css-label {
     outline: 0;
 }
 #boutton_i2 {
-  margin-left:-100px;
-  margin-top: -18px; 
+  margin-left: 370px;
+  margin-top: -25px;
+  margin-right: 10px; 
 
 }
 
@@ -325,15 +336,15 @@ label.css-label {
 #label h1{
    
   margin-left: 2px;
-  margin-top: -35px;
-  width: 110px;
-  font-size: 19px;
+  margin-top: -3.5%;
+  width: 13%;
+  font-size: 12px;
   
 }
 .label-textarea {
-  width: 200px;
+  width: 31%;
   margin-top: 5px;
-  margin-left: 115px;
+  margin-left: 14%;
 }
 
 
@@ -341,7 +352,7 @@ label.css-label {
   
 
   display: inline-block;
-  margin-left: 105px;
+  margin-left: 13%;
   margin-top: 18px;
   padding: 8px;
 
@@ -379,7 +390,7 @@ label.css-label {
 
    /* information button/icon positon and style*/
 
-#boutton_i2{
+#boutton_i3{
   
   display:block;
     width:20px;
@@ -395,8 +406,8 @@ label.css-label {
     font-weight:normal; 
     outline: 0;
 }
-#boutton_i2 {
-  margin-left:380px;
+#boutton_i3 {
+  margin-left:120%;
   margin-top: -20px; 
 
 }

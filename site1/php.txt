@@ -1,7 +1,0 @@
-./configure --with-erlanglib=/usr/lib/erlang/lib/erl_interface-3.7.9/lib/ --with-erlanginc=/usr/lib/erlang/lib/erl_interface-3.7.9/include/
-
-/usr/lib/php5/20121212/
-sudo nano /etc/php5/apache2/php.ini 
-sudo nano /etc/php5/cli/php.ini 
-
-sudo nano /etc/apache2/mods-available/php5.conf

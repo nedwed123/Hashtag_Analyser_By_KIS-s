@@ -201,15 +201,20 @@ $("#currentVal").html(ui.value);
 
 			<!--division of header part of the page ,top header-->
 			<div id="div_topHeader">
+			
 				<!--top header of the page-->
 				<header id="instagram_header">
+				<div id="center_header">
 					<h1 >Hashtag analyzer
 						<img src="images/header.png" style="width:8px;height:33px" > 
          	 			<h3 >For people who like to research <h3>
 					</h1>
+					
 				<!--close top header of the page-->
 				</header>
+			</div>
 			<!--close division of the top header(id="div_topHeader")-->
+			
 	    	</div>
 
 
@@ -251,7 +256,7 @@ $("#currentVal").html(ui.value);
 									
 									<!--like checkbox-->
 									<td >
-										   <input  type="checkbox" name="Likes" value="Likes" id="Likes" class="css-checkbox" />
+										   <input type="checkbox" name="Likes" value="Likes" id="Likes" class="css-checkbox" />
 											<label for="Likes" class="css-label"><h1>Likes<h1></label>
 											     
 											       <button id="boutton_i1">i</button>				
@@ -260,15 +265,34 @@ $("#currentVal").html(ui.value);
 										</td>
 										<!--Media checkbox-->
 										<td >
-										   <input  type="checkbox" name="MediaC" value="MediaC" id="MediaC" class="css-checkbox" />
+										   <input type="checkbox" name="MediaC" value="MediaC" id="MediaC" class="css-checkbox" />
 											<label for="MediaC" class="css-label"><h1>Media<h1></label>
 											    
-											       <button id="boutton_i2">i</button>				
+											       <button id="boutton_i3">i</button>				
 												
 											</label>
 										</td>
-									
-																		   
+	<!--	<script type="text/javascript">
+function fish(){
+
+var aaa = document.getElementById('11');
+
+  aaa.addEventListener('click', function() {
+  var aaa = document.getElementById('11'); 
+    if( this.checked){
+      document.getElementById('22').checked = false;
+  }
+var bbb = document.getElementById('22');
+
+  bbb.addEventListener('click', function() {
+  var bbb = document.getElementById('22');
+  if(this.checked){
+  	document.getElementById('11').checked = false;
+  }
+}
+  
+window.onload = fish;
+		</script>				-->									   
 									 </tr>
 								</table>
 							</div>
@@ -291,7 +315,7 @@ $("#currentVal").html(ui.value);
 								    <label for="compare" ><h1>Compare with: <h1></label>
 								</div>
 							<div id="text">					  
-								    <h1  class="label-textarea">........................................................................................</h1>
+								    <h1  class="label-textarea">..................................................................................</h1>
 								       
 											       <button id="boutton_i2">i</button>				
 									
@@ -310,7 +334,7 @@ $("#currentVal").html(ui.value);
 							          		<li><a href="http://site1.local/index.php">Home<i class="fa fa-home"></i></a></li>
 							          		<li><a href="http://site1.local/instagram.php">Instagram <i class="fa fa-instagram"></i></a></li>
 							             	<li><a href="http://site1.local/twitter.php">Twitter <i class="fa fa-twitter"></i></a></li>
-							             	<li><a href="#">Comments<i class="fa fa-comment"></i></a></li>
+							             	<li><a href="http://site1.local/comments.php">Comments<i class="fa fa-comment"></i></a></li>
 
 							          </ul>
 							      </div>

@@ -38,8 +38,8 @@ $likes=$rsL[0];
 }
 peb_close($link);
 
-?>    
-    
+?>	  
+	  
     <meta charset="utf-8">
     <title>Flat UI Free</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

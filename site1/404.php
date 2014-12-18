@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <link REL="SHORTCUT ICON" HREF="images/icon.png">
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
-<meta http-equiv="refresh" content="6;URL='http://site1.local/home.php'" />
+<meta http-equiv="refresh" content="6;URL='http://site1.local/index.php'" />
 <title>Error 404</title>>
 </head>
 

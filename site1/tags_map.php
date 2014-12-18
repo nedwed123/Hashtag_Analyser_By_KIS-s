@@ -6,7 +6,7 @@
 $link = peb_pconnect("cat@food", "abc"); 
 
 if (!$link) { 
-//    die('Could not connect: ' . peb_error()); 
+
     Header("Location: http://site1.local/404.php");
 } 
 $msg = peb_encode("[~s]", array( 

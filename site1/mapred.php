@@ -3,12 +3,14 @@
 <meta charset="utf-8">
 		<link REL="SHORTCUT ICON" HREF="../images/icon.png">
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
-		<title>MapReduce Recent Count</title>
+		<title>MapReduce Recent Count Twitter</title>
 </head>
 
 <body>
 <?php 
-session_start();						
+session_start();	
+mb_internal_encoding('UTF-8');
+
 ?>
 
 <?php
@@ -38,6 +40,7 @@ $msg=call_user_func_array('array_merge',$rs);
 $arr=$msg;
 $wo=array();
 
+$indexF=array();
 
 $num=array();
 
@@ -46,20 +49,44 @@ $z=0;
 $length = count($arr);
 for ($i = 0; $i < $length; $i++) {
     if($i % 2 ==0 ){
-  $wo[$x]=$arr[$i];
+
+  $wo[$x]=mb_strtolower($arr[$i]);
+
   $x++;
                     }
 if($i % 2 !=0 ){
 $num[$z]=$arr[$i];
 $z++;
+
 }
+
         }
+        $index=array();
+        for($a=0; $a<count($wo); $a++){ 
+        	if(preg_match('/^[a-zA-Z ]*$/', $wo[$a]) ==0){
+        		$index[$a]=$a;
+        	}
+        }
+
+        $c=0;
+         for($b=0; $b<count($wo); $b++){ 
+         	if(empty($index[$b])==0){
+         		$indexF[$c]=$index[$b];
+         		$c++;
+         	}
+        }
+
+        for($b=0; $b<count($indexF); $b++){ 
+         	unset($wo[$indexF[$b]]); 
+         	unset($num[$indexF[$b]]);
+        }
+
 ?>
 
 <script type="text/javascript">
 // use php implode function to build string for JavaScript array literal
 var wordJ = <?php echo '["' . implode('", "', $wo) . '"]' ?>;
-var numJ = <?php echo json_encode($num) ?>;
+var numJ = <?php echo '[' . implode(', ', $num) . ']' ?>;
 var s = <?php  echo (int)$show  ?>;
 
 

@@ -131,15 +131,20 @@ function myInit()
 
 			<!--division of header part of the page ,top header-->
 			<div id="div_topHeader">
+			
 				<!--top header of the page-->
 				<header id="instagram_header">
+				<div id="center_header">
 					<h1 >Hashtag analyzer
 						<img src="images/header.png" style="width:8px;height:33px" > 
          	 			<h3 >For people who like to research <h3>
 					</h1>
+					
 				<!--close top header of the page-->
 				</header>
+			</div>
 			<!--close division of the top header(id="div_topHeader")-->
+			
 	    	</div>
 
 
@@ -229,7 +234,6 @@ function myInit()
 </div>
 
 
-
 <script>
 (function() {
 $("#range").slider({
@@ -238,9 +242,17 @@ max: 5,
 value: 0,
 slide: function(e, ui) {
 $("#currentVal").html(ui.value);
+
+var x = ui.value;
+
+ $.post("http://site1.local/check.php",{value:x},function(result){
+  });
+
 }
 });
 }).call(this);
+
+
 
 </script>
 
@@ -253,7 +265,7 @@ $("#currentVal").html(ui.value);
 									
 									<!--#-->
 									<td >
-										   <input  type="checkbox" name="Recent" value="Recent" id="Recent" class="css-checkbox" />
+										   <input type="checkbox" name="Recent" value="Recent" id="Recent" class="css-checkbox" onclick="return true;" />
 											<label for="Recent" class="css-label"><h1>Recent Count<h1></label>
 
 											     <a id="button1" href="#openModal2">
@@ -297,10 +309,10 @@ $("#currentVal").html(ui.value);
 
 							  <div class="social">
 							          <ul>
-											<li><a href="http://site1.local/index.php">Home<i class="fa fa-home"></i></a></li>
-											<li><a href="http://site1.local/instagram.php">Instagram <i class="fa fa-instagram"></i></a></li>
+							              <li><a href="http://site1.local/index.php">Home<i class="fa fa-home"></i></a></li>
+							          		<li><a href="http://site1.local/instagram.php">Instagram <i class="fa fa-instagram"></i></a></li>
 							             	<li><a href="http://site1.local/twitter.php">Twitter <i class="fa fa-twitter"></i></a></li>
-							             	<li><a href="#">Comments<i class="fa fa-comment"></i></a></li>
+							             	<li><a href="http://site1.local/comments.php">Comments<i class="fa fa-comment"></i></a></li>
 							              
 							          </ul>
 							      </div>
@@ -322,48 +334,38 @@ $("#currentVal").html(ui.value);
 											    193,192,208,187,209,187,217,179,215,167,221,164,220,158,237,185,236,179,248,160,243,158,261,171,254,164,264,155,272,153,277,161,275,155,287,165,300,164,307,188,
 											    305,206,289,212,289,210,277,215,276,215,283,220,289,231,285,229,275,242,265,240,247,239,245,245,240,239,228,240,219,239,213,240,204,239,196,248,184,260,183,257,
 											    171,263,156,265,141,270,136,274,130,281,121,281,117,282,108,291,101,299,92,311,89,318,77,326,75,332,81,348,80,354,83,357,75,359,59" 
-											    href="http://site1.local/test/docs/examples/norway.php" alt="imgmap201293016112-0" title="NORWAY" class="imgmap201293016112-area" 
+											    href="http://site1.local/language_no.php" alt="imgmap201293016112-0" title="NORWAY" class="imgmap201293016112-area" 
 											    id="imgmap201293016112-area-0" onclick="return true;">
 
 											    <area id="fn1"shape="poly" onmouseover="myHover(this);" onmouseout="myLeave();" coords="366,266,399,248,403,250,406,247,413,249,443,197,444,193,439,184,428,175,429,167,
 											    421,161,419,152,415,152,414,145,411,141,414,133,398,110,402,96,395,87,391,88,387,84,387,68,386,65,386,61,386,56,373,51,359,59,361,68,354,81,347,79,334,81,327,
 											    71,317,77,329,86,336,88,345,104,347,113,351,119,350,128,354,134,371,149,373,162,370,162,366,165,365,169,343,199,341,197,339,199,335,211,342,233,341,247,358,258" 
-											    href="http://site1.local/test/docs/examples/finland.php" alt="imgmap201293016112-1" title="FINLAND" class="imgmap201293016112-area" 
+											    href="http://site1.local/language_fn.php" alt="imgmap201293016112-1" title="FINLAND" class="imgmap201293016112-area" 
 											    id="imgmap201293016112-area-1" onclick="return true;">
 											   
 											   <area id="dn1"shape="poly" onmouseover="myHover(this);" onmouseout="myLeave();" coords="202,333,203,325,209,321,209,309,202,313,200,319,180,323,174,
 											   350,179,351,184,357,182,363,190,369,194,365,192,361,192,355,196,351,201,349,201,347,206,344,206,341,210,339,212,336,212,334" 
-											   href="http://site1.local/test/docs/examples/denmark.php" alt="imgmap201293016112-2" title="DENMARK" class="imgmap201293016112-area" 
+											   href="http://site1.local/language_dn.php" alt="imgmap201293016112-2" title="DENMARK" class="imgmap201293016112-area" 
 											   id="imgmap201293016112-area-2" onclick="return true;">
 											   
 											   <area id="dn2"shape="poly" onmouseover="myHover(this);" onmouseout="myLeave();" coords="215,352,222,361,229,368,232,360,233,357,234,352,231,345,224,345" 
-											   href="http://site1.local/test/docs/examples/denmark.php" alt="imgmap201293016112-2" title="DENMARK" class="imgmap201293016112-area" 
+											   href="http://site1.local/language_dn.php" alt="imgmap201293016112-2" title="DENMARK" class="imgmap201293016112-area" 
 											   id="imgmap201293016112-area-2-2" onclick="return true;">
 											    
 												<area id="se1"shape="poly" onmouseover="myHover(this);" onmouseout="myLeave();" coords="353,135,350,129,351,122,346,109,341,95,335,86,329,87,318,77,315,89,
 												299,88,293,103,287,100,282,111,281,121,273,129,272,137,266,141,266,157,259,168,260,180,247,185,241,193,240,203,238,213,240,221,239,229,244,237,
 												239,245,243,264,230,275,229,288,224,289,241,337,236,343,240,359,258,358,259,351,267,343,281,344,288,299,288,293,304,283,307,280,305,276,
 												311,269,299,259,288,270,282,261,291,248,292,227,294,223,293,213,327,168,326,158,330,153,326,149,337,137" 
-												href="http://site1.local/test/docs/examples/sweden.php" alt="imgmap201293016112-3" title="SWEDEN" class="imgmap201293016112-area" 
+												href="http://site1.local/language_sv.php" alt="imgmap201293016112-3" title="SWEDEN" class="imgmap201293016112-area" 
 												id="imgmap201293016112-area-3" onclick="return true;">
 											    
 												<area id="se2"shape="poly" onmouseover="myHover(this);" onmouseout="myLeave();" coords="308,310,314,307,321,319,309,325" 
-												href="http://site1.local/test/docs/examples/sweden.php" alt="imgmap201293016112-area-4" title="SWEDEN" class="imgmap201293016112-area" 
+												href="http://site1.local/language_sv.php" alt="imgmap201293016112-area-4" title="SWEDEN" class="imgmap201293016112-area" 
 												id="imgmap201293016112-area-4" onclick="return true;">
 											    
 											</map>
 
-											<script type="text/javascript">
-											/*
-											if(document.getElementById("noy1").setAttribute("onclick", "return false;")){}
-											document.getElementById("noy1").setAttribute("onclick", "return false;");
-											document.getElementById("fn1").setAttribute("onclick", "return false;");
-											document.getElementById("dn1").setAttribute("onclick", "return false;");
-											document.getElementById("dn2").setAttribute("onclick", "return false;");
-											document.getElementById("se1").setAttribute("onclick", "return false;");
-											document.getElementById("se2").setAttribute("onclick", "return false;");
-											*/
-											</script>
+											
 
 									</center>
 								</div>				
@@ -381,14 +383,23 @@ $("#currentVal").html(ui.value);
 							<?php
 		 					session_start();
 
-							$_SESSION['Test'] = $_POST["searchBox"];
-							$_SESSION['Test1']= $_POST["searchBoxi"];
+		 					$x = $_SESSION["range1"];
+							$_SESSION['Key'] = $_POST["searchBox"];
+							$_SESSION['Key1'] = $_POST["searchBoxi"];
+							$_SESSION['range'] = $x;
+
 							if (isset($_POST['Recent'])){
   								echo '<META HTTP-EQUIV="Refresh" Content="0; URL=http://site1.local/mapred.php">';}  
 							 elseif(strlen($_POST["searchBox"])>0 && strlen($_POST["searchBoxi"])>0)
-							 	echo '<META HTTP-EQUIV="Refresh" Content="0; URL=http://site1.local/compare.php">';
+							 	echo '<META HTTP-EQUIV="Refresh" Content="0; URL=http://site1.local/key_compare.php"> && (int)$x==0';
+							 elseif(strlen($_POST["searchBox"])>0 && (int)$x==0)
+							 	echo '<META HTTP-EQUIV="Refresh" Content="0; URL=http://site1.local/key.php">';
+							 elseif(strlen($_POST["searchBox"])>0 && (int)$x>0)
+							 	echo '<META HTTP-EQUIV="Refresh" Content="0; URL=http://site1.local/key_day.php">';
+
 							
 							?>  
 	</body>
 </html>
 
+ 

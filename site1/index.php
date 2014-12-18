@@ -6,64 +6,85 @@
   <title>Index | Analyze Hashtag </title>
   <link REL="SHORTCUT ICON" HREF="../images/icon.png">
   <link rel="stylesheet" type="text/css" href="css/home_page.css"/>
-      <link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'> 
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
-<?php
-session_start();
-?> 
 
 </head>
 <body>
-  <div class= "content">
 
-          <div id="top_border" >
-            <header id="top_header">
-              <h1>Hashtag Analyzer
-                <img src="images/header.png" style="width:8px;height:33px" > 
-                  <h3>For you who likes to research <h3>
-              </h1>
-            </header>
-          </div>
+         <!--division of header part of the page ,top header-->
+			<div id="div_topHeader">
+			
+				<!--top header of the page-->
+				<header id="instagram_header">
+				
+					<h1 >Hashtag analyzer
+						<img src="images/header.png" style="width:8px;height:33px" > 
+         	 			<h3 >For people who like to research <h3>
+					</h1>
+					
+				<!--close top header of the page-->
+				</header>
+			<!--close division of the top header(id="div_topHeader")-->
+			
+	    	</div>
 
-        <div id="icon-wrapper">
-              <!--1-->
-            <div class="icons1">
-                  <div class="icon-slide-container"><a href="http://site1.local/instagram.php">
-                  <img class="slide-icon" height="250" src="images/final-i.png" alt="instagramIcon" style="width:410px;height:700px"></a>
-                    </div>
-                </div>
-            
-                <!--2-->
-              <div class="icons2">
-                <div class="icon-slide-container"><a href="#">
-                 <img class="slide-icon" height:"100" src="images/final-v.png"  alt="helpIcon" style="width:410px;height:700px"></a>
+
+        <div class="jumbotron">
+
+		
+		<div class="container-fluid">
+      
+      <div class="row">
+        <div class="col-sm-4" >
+		   <div class="icons">
+                  <div class="icon-slide-container">
+                    <a href="http://site1.local/instagram.php">
+                      <img class="slide-icon"  height="100"  src="images/final-i.png" alt="instagramIcon">
+                    </a>
+                  <!--end of icon-slide-container-->
                   </div>
-                </div>
-          
-                  <!--3-->
-                <div class="icons3">
-                  <div class="icon-slide-container"><a href="http://site1.local/twitter.php">
-                  <img class="slide-icon" height="250" src="images/final-t.png" alt="twitterIcon" style="width:410px;height:700px"></a>
-                    </div>
-                </div>
-                <!-- end of warpper -->  
+            <!--end of icons1-->
             </div>
+		</div>
+        <div class="col-sm-4" ><div class="icons">
+                  <div class="icon-slide-container">
+                    <a href="http://site1.local/video.php">
+                      <img class="slide-icon"  height="100"  src="images/final-v.png" alt="instagramIcon">
+                    </a>
+                  <!--end of icon-slide-container-->
+                  </div>
+            <!--end of icons1-->
+            </div></div>
+		
+        <div class="col-sm-4" ><div class="icons">
+                  <div class="icon-slide-container">
+                    <a href="http://site1.local/twitter.php">
+                      <img class="slide-icon"  height="100"  src="images/final-t.png" alt="instagramIcon">
+                    </a>
+                  <!--end of icon-slide-container-->
+                  </div>
+            <!--end of icons1-->
+            </div></div>
+      </div>
+
+    </div>
+	 </div>
+    
 
             <div id="down_footer">      
-                <footer id="the_footer">
-                      <ul>
-                        <li>About</li>
-                        <li>Home</li>
-                        <li>Contact Us</li>
-                      </ul>
-                    <img class="footer_img" src="images/logo.jpg" style="width:110px;height:90px" >
-                    <br></br>
-                  <p><h3>copy Right 2014 all right </h3></p>
-                  <p><h3>All right reservied<h3></p>
-                  <p><h3>team KIS&S</h3></p>
-                </footer>
-         </div>
-        <!-- end of main div -->
-    </div>
+         
+                  <p><h3>Copyright reserved 2014</h3></p>
+   
+  <p>KISS-Keep It Simple Stupid</p>
+             <!--end of down_footer-->
+            </div>
+            
+    <!-- end of main div -->
+   
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 </html>
