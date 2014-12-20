@@ -1,0 +1,9 @@
+{application,twitter,
+             [{description,[]},
+              {vsn,"1"},
+              {registered,[]},
+              {applications,[kernel,stdlib,ibrowse,ssl]},
+              {env,[]},
+              {modules,[twitter_app,twitter_server,twitter_sup,
+                        twitterminer_pipeline,twitterminer_riak,
+                        twitterminer_riak_d,twitterminer_source]}]}.

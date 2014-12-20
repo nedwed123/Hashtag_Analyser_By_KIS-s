@@ -1,0 +1,14 @@
+{application, twitter,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib,
+                  ibrowse,
+					         ssl
+                 ]},
+ % {mod, { twitter_app, []}},
+  {env, []}
+ ]}.
