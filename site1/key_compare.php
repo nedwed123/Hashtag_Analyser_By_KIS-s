@@ -16,6 +16,7 @@ $word2=$_SESSION['Key1'];
 $link = peb_connect("cat@food",  "abc");
 if (!$link) {
 Header("Location: http://site1.local/404.php");
+//echo 'link error';
 }
 $msg = peb_encode("[~s]", array( 
                                    array($word)
@@ -40,13 +41,13 @@ if(count($msg)>2){
         //print_r($s);
         //echo '<br/>';
         $th=$msg[2];
-    //    print_r($th);
-    //    echo '<br/>';
+        //print_r($th);
+        //echo '<br/>';
         echo '<br/>';
 }
  if(count($msg)<2){
             Header("Location: http://site1.local/404.php");
-
+//echo'if(count($msg)<2)';
         }
 $msg2 = peb_encode("[~s]", array( 
                                    array($word2)
@@ -61,21 +62,21 @@ $rs2= peb_decode($result2);
 
 $msg3=call_user_func_array('array_merge',$rs2);
 
-//print_r($msg);
-//echo '<br/>';
+print_r($msg);
+echo '<br/>';
 if(count($msg3)>2){
         $f3=$msg3[0]*-1;
-    //    print_r($f3);
-    //    echo '<br/>';
+        print_r($f3);
+        echo '<br/>';
         $s3=$msg3[1];
-    //    print_r($s3);
-    //    echo '<br/>';
+        print_r($s3);
+        echo '<br/>';
         $th3=$msg3[2];
-    //    print_r($th3);
+        print_r($th3);
 }
  if(count($msg3)<2){
-            Header("Location: http://site1.local/404.php");
-
+          //  Header("Location: http://site1.local/404.php");
+echo 'if ( count ( $ msg3 ) < 2 )';
         }
 
         

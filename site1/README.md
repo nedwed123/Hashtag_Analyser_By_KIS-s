@@ -30,7 +30,7 @@ search boxes from instagram.php
 # test/docs/examples/finland.php
 # test/docs/examples/denmark.php
 These 4 pages show popular hastags from that country when the country 
-is click on the map in instagram.php
+is click on the map in instagram.php design taken from https://github.com/designmodo/Flat-UI
 
 # video.php
 This page redirects the user to a video on Vimeo.

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<title>Denmark Everyday Hashtags Twitter</title>
   <head>
 <?php
 

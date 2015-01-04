@@ -300,7 +300,7 @@ document.getElementById("MediaC").checked=false;
 }
 
 function check(){
-	if(document.getElementById("Likes").checked==false && document.getElementById("MediaC").checked==false){
+	if(document.getElementById("Likes").checked==false && document.getElementById("MediaC").checked==false && document.getElementById("searchBox").value.length==0){
 		alert("Please choose a checkbox!");
 		}
 	}

@@ -17,7 +17,8 @@ $range=(int)$_SESSION['range'];
 $link = peb_connect("cat@food",  "abc");
 if (!$link) {
 //die('Could not connect: ' . peb_error());
-Header("Location: http://site1.local/404.php");
+			Header("Location: http://site1.local/404.php");
+//echo 'link error';
 }
 $msg = peb_encode("[~s]", array( 
                                    array($word)
@@ -36,21 +37,22 @@ $msg=call_user_func_array('array_merge',$rs);
 //echo '<br/>';
 if(count($msg)>2){
         $f=$msg[0]*-1;
-       // print_r($f);
-       // echo '<br/>';
+        //print_r($f);
+        //echo '<br/>';
         $s=$msg[1];
-      //  print_r($s);
-      //  echo '<br/>';
+        //print_r($s);
+        //echo '<br/>';
         $th=$msg[2];
-      //  print_r($th);
+        //print_r($th);
+        echo '<br/>';
 }
  if(count($msg)<2){
             Header("Location: http://site1.local/404.php");
-
+//echo 'if(count($msg)<2)';
         }
 
-        $max=max($th)+5;
-        $min=min($s)-5;
+      //  $max=max($th)+5;
+      //  $min=min($s)-5;
 
 peb_close($link);
 session_destroy();
@@ -61,8 +63,8 @@ session_destroy();
 $(function () {
     var r = <?php echo json_encode($f) ?>;
         var f = <?php echo json_encode($s) ?>;
-        var min = <?php echo $min; ?>;
-        var max = <?php echo $max; ?>;
+       // var min = <?php echo $min; ?>;
+       // var max = <?php echo $max; ?>;
     var categories = ["day 0"];
     $(document).ready(function () {
         $('#container').highcharts({
@@ -96,8 +98,8 @@ $(function () {
                         return (Math.abs(this.value));
                     }
                 },
-                min: min,
-                max: max
+                min: r-5,
+                max: f+5
             },
 
             plotOptions: {

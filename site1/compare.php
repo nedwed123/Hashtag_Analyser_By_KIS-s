@@ -3,7 +3,7 @@
 <meta charset="utf-8">
         <link REL="SHORTCUT ICON" HREF="../images/icon.png">
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
-        <title>Compare</title>
+        <title>Instagram Compare</title>
 </head>
 
 <body>
