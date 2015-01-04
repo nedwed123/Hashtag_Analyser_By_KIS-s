@@ -20,6 +20,7 @@ $link = peb_connect("cat@food", "abc");
 if (!$link) { 
 //    die('Could not connect: ' . peb_error()); 
     Header("Location: http://site1.local/404.php");
+//echo'link error';
 } 
 
 
@@ -91,7 +92,8 @@ var s = <?php  echo (int)$show  ?>;
 
 
 if(numJ.length==0){
-window.location.replace("http://site1.local/404.php");
+	 Header("Location: http://site1.local/404.php");
+//echo'error if(numJ.length==0)';
 }
 </script>
 

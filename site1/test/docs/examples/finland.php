@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<title>Twitter Everyday Hashtags Twitter</title>
   <head>
 <?php
 
@@ -40,7 +41,7 @@ peb_close($link);
 ?>	  
 	  
     <meta charset="utf-8">
-    <title>Flat UI Free</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Loading Bootstrap -->

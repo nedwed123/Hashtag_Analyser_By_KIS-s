@@ -18,6 +18,7 @@ $range=(int)$_SESSION['range1'];
 $link = peb_connect("cat@food",  "abc");
 if (!$link) {
 Header("Location: http://site1.local/404.php");
+//echo 'link error';
 }
 $msg = peb_encode("[~s~i]", array( 
                                    array($word,$range)
@@ -54,12 +55,13 @@ echo '<br/>';
     }
       
 }
-    //    print_r($ret);
-    //    echo '<br/>';
-    //    print_r($fav);
+        //print_r($ret);
+        echo '<br/>';
+        //print_r($fav);
    
         if($ret[0]==0 && count($ret)==1 && $fav[0]==0 && count($fav)==1){
             Header("Location: http://site1.local/404.php");
+//echo 'if($ret[0]==0 && count($ret)==1 && $fav[0]==0 && count($fav)==1)';
     }
         $max=max($fav)+5;
         $min=min($ret)-5;
